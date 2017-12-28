@@ -18,4 +18,3 @@ function palindrome(str) {
   return bool;
 }
 palindrome("eye");
-

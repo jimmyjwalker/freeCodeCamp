@@ -1,25 +1,20 @@
 
-function findLongestWord(str) {
-  //convert str to array elements separated by spaces
-  var strArr = str.split(" ");
-  console.log(strArr);
+function palindrome(str) {
+  console.log(str);
+  var noWilds = "";
+  var strArr=[];
+  var newArr=[];
+  var bool = true;
+  str = str.toLowerCase(str);
+  noWilds = str.replace(/[^0-9^a-z]/gi, '');
 
-  var val = 1;
-  var longest = 0;
-  //count each word length
-  //assign word to value, if next word is longer reassign value
-  for(var i = 0; i < strArr.length; i++){  
-    console.log("strArr[" + i + "]= " + strArr[i] + " " + "strArr[" + j + "]= " + strArr[j] + " val="+val);
-    if (strArr[i].length > strArr[val].length){
-      console.log("strArr[i].length= " + strArr[i].length + " " + " is >  strArr[val].length = " + strArr[val].length);
-      val = i;
-      console.log(" val="+val);
-    }
-  }
-
-  longest = strArr[val].length;
-    console.log("strArr[val].length = " + strArr[val].length);
-  return longest;
+  for(var j=0; j < (noWilds.length)/2+1; j++){
+    console.log(noWilds + " - j="+noWilds[j] + " k=" + noWilds[noWilds.length-(j+1)]);
+    if(noWilds[j] != noWilds[noWilds.length-(j+1)]){
+      bool=false;
+      console.log(" if-" + bool);
+    } 
+  } 
+  return bool;
 }
-
-findLongestWord("The quick brown fox jumped over the lazy dog");
+palindrome("eye");
